@@ -1,0 +1,47 @@
+<section
+  id="hero"
+  class="relative h-screen flex flex-col justify-center items-center text-center text-secondary bg-cover bg-center"
+  style="background-image: url('hero-bg.png');"
+>
+  <!-- Overlay -->
+  <div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <h1
+      class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight mb-6"
+      data-aos="fade-up"
+      data-aos-offset="0" 
+      data-aos-delay="0"
+    >
+      Yes We Can!
+    </h1>
+    <p
+      class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto"
+      data-aos="fade-up"
+      data-aos-delay="200"
+      data-aos-offset="0" 
+      data-aos-delay="150"
+    >
+      Присоединяйтесь к нам сегодня, создавайте своё будущее. Используйте
+      нашу платформу, чтобы зарабатывать, расти и добиваться успеха.
+    </p>
+    <button
+      data-aos="zoom-in"
+      data-aos-delay="400"
+      data-aos-offset="0" 
+      data-aos-delay="300"
+      class="bg-secondary text-primary px-8 py-4 rounded-full text-lg font-medium hover:bg-accent hover:text-secondary transition"
+      (click)="scrollToAbout()"
+    >
+      Начать
+    </button>
+  </div>
+
+  <!-- Wave Divider -->
+  <div class="absolute bottom-0 w-full overflow-hidden leading-none rotate-180">
+    <svg class="relative block w-full h-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path fill="#ffffff" d="M0,64L48,80C96,96,192,128,288,122.7C384,117,480,75,576,64C672,53,768,75,864,80C960,85,1056,75,1152,64C1248,53,1344,43,1392,37.3L1440,32L1440,0L0,0Z"></path>
+    </svg>
+  </div>
+</section>

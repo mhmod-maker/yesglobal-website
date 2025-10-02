@@ -1,0 +1,40 @@
+<section
+  id="about"
+  class="py-20 px-6 bg-secondary text-primary"
+>
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Bild -->
+    <div data-aos="fade-right" class="flex justify-center">
+      <div class="w-full max-w-[700px] aspect-square rounded-full overflow-hidden shadow-lg">
+        <img 
+          src="gulmira-photo.jpg" 
+          alt="About Us" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div data-aos="fade-left">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Обо мне
+      </h2>
+      <p class="text-lg text-graytext leading-relaxed mb-6">
+        Я — Гульмира Акмабева. Уже много лет я в MLM, и для меня это не просто бизнес, а путь к личной свободе и новым возможностям.<br>
+        Я работаю с людьми, которые ищут перемен и стремятся к лучшему — в любом возрасте, на любом этапе жизни. <br>
+        <br>
+        Моя цель — делиться опытом и помогать каждому, кто готов сделать шаг навстречу успеху.<br>
+        <br>
+        Хотите узнать больше и начать свой путь? Давайте сделаем это вместе!
+      </p>
+      <button
+        (click)="scrollToContact()"
+        class="bg-accent text-secondary px-6 py-3 rounded-full text-lg hover:bg-primary hover:text-secondary transition"
+      >
+        Связаться
+      </button>
+    </div>
+
+  </div>
+</section>

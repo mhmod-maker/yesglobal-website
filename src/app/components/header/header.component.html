@@ -1,0 +1,44 @@
+<header
+  #mainHeader
+  class="fixed top-0 left-0 w-full z-50 transition-colors duration-300"
+  [ngClass]="isScrolled ? 'bg-primary shadow-lg' : 'bg-primary/30 backdrop-blur-sm'"
+>
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="yes-logo-big-1.png" alt="Logo" class="h-8 md:h-10" />
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8 text-lg font-medium">
+      <a [routerLink]="['/']"
+         [ngClass]="activeSection === 'home' ? 'text-accent' : 'text-secondary hover:text-accent transition'">
+         Главная</a>
+      <a [routerLink]="['/products']"
+         [ngClass]="activeSection === 'products' ? 'text-accent' : 'text-secondary hover:text-accent transition'">
+         Продукты</a>
+      <a [routerLink]="['/contact']" fragment="contact"
+         [ngClass]="activeSection === 'contact' ? 'text-accent' : 'text-secondary hover:text-accent transition'">
+         Контакты</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-3xl focus:outline-none text-secondary" (click)="toggleMenu()">
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile Menu mit Animation -->
+  <div 
+    *ngIf="isMenuOpen" 
+    @menuAnimation 
+    class="md:hidden bg-primary text-secondary px-6 pb-4 flex flex-col space-y-4"
+  >
+    <a [routerLink]="['/']" (click)="toggleMenu()"
+       [ngClass]="activeSection === 'home' ? 'text-accent' : 'hover:text-accent transition'">Главная</a>
+    <a [routerLink]="['/products']" (click)="toggleMenu()"
+       [ngClass]="activeSection === 'products' ? 'text-accent' : 'hover:text-accent transition'">Продукты</a>
+    <a [routerLink]="['/contact']" fragment="contact" (click)="toggleMenu()"
+       [ngClass]="activeSection === 'contact' ? 'text-accent' : 'hover:text-accent transition'">Контакты</a>
+  </div>
+</header>

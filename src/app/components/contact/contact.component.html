@@ -1,0 +1,80 @@
+<section id="contact" class="py-20 px-6 bg-primary text-secondary text-center">
+  <!-- Section Header -->
+  <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" data-aos="fade-down">
+    Свяжитесь со мной
+  </h2>
+  <p class="text-lg text-graytext mb-12 max-w-xl mx-auto" data-aos="fade-down" data-aos-delay="200">
+    Напишите мне в социальных сетях или отправьте личное сообщение.
+  </p>
+
+  <!-- Social Media Icons -->
+  <div class="flex justify-center space-x-8 mb-12 text-3xl" data-aos="fade-up">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/996703995329" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Telegram -->
+    <a href="https://t.me/akmatbaevagulmira" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition">
+      <i class="fab fa-telegram"></i>
+    </a>
+    <!-- Instagram -->
+    <a href="https://instagram.com/akmatbaevag18" target="_blank" rel="noopener noreferrer"
+      class="hover:text-accent transition">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- Status Box -->
+  <div *ngIf="statusMessage" class="max-w-xl mx-auto mb-6 p-4 rounded-lg text-center transition" [ngClass]="statusType === 'success' 
+   ? 'bg-green-500 text-white' 
+   : 'bg-red-500 text-white'">
+    {{ statusMessage }}
+  </div>
+
+  <!-- Contact Form -->
+  <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)" class="max-w-xl mx-auto grid gap-6 text-left">
+
+    <!-- Name -->
+    <div>
+      <input type="text" placeholder="Ваше имя" [(ngModel)]="formData.name" name="name" #name="ngModel"
+        class="p-4 rounded-lg text-primary w-full focus:outline-none border-2"
+        [ngClass]="name.invalid && name.touched ? 'border-red-500' : 'border-transparent'" required />
+      <p *ngIf="name.invalid && name.touched" class="text-red-400 text-sm mt-1">
+        Укажите имя.
+      </p>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <input type="email" placeholder="Ваше email" [(ngModel)]="formData.email" name="email" #email="ngModel"
+        class="p-4 rounded-lg text-primary w-full focus:outline-none border-2"
+        [ngClass]="email.invalid && email.touched ? 'border-red-500' : 'border-transparent'" required email />
+      <p *ngIf="email.invalid && email.touched" class="text-red-400 text-sm mt-1">
+        Введите корректный email.
+      </p>
+    </div>
+
+    <!-- Message -->
+    <div>
+      <textarea placeholder="Сообщение" rows="4" [(ngModel)]="formData.message" name="message" #message="ngModel"
+        class="p-4 rounded-lg text-primary w-full focus:outline-none border-2"
+        [ngClass]="message.invalid && message.touched ? 'border-red-500' : 'border-transparent'" required></textarea>
+      <p *ngIf="message.invalid && message.touched" class="text-red-400 text-sm mt-1">
+        Поле сообщения не может быть пустым.
+      </p>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="isSending || !contactForm.valid"
+      class="flex justify-center items-center gap-2 bg-accent text-secondary px-6 py-3 rounded-full text-lg font-medium transition disabled:opacity-50 disabled:cursor-not-allowed">
+      <!-- Spinner wenn Senden aktiv -->
+      <svg *ngIf="isSending" class="animate-spin h-5 w-5 text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none"
+        viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+      </svg>
+
+      <span>{{ isSending ? 'Идёт отправка…' : 'Отправить сообщение' }}</span>
+    </button>
+  </form>
+</section>
