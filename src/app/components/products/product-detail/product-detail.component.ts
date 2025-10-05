@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Product, ProductService } from '../products.service';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from './safe-url.pipe';
@@ -17,7 +17,8 @@ export class ProductDetailComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -28,6 +29,6 @@ export class ProductDetailComponent {
   }
 
   scrollToContact() {
-    window.location.href = '/contact';
+    this.router.navigate(['/'], { fragment: 'contact' });
   }
 }

@@ -41,7 +41,7 @@ export class HeaderComponent {
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
 
-    const sections = ['hero', 'about', 'services', 'contact'];
+    /* const sections = ['hero', 'products', 'contact'];
     for (let id of sections) {
       const el = document.getElementById(id);
       if (el) {
@@ -51,6 +51,6 @@ export class HeaderComponent {
           break;
         }
       }
-    }
+    } */
   }
 }

@@ -14,10 +14,10 @@
       <a [routerLink]="['/']"
          [ngClass]="activeSection === 'home' ? 'text-accent' : 'text-secondary hover:text-accent transition'">
          Главная</a>
-      <a [routerLink]="['/products']"
+      <a href="#products"
          [ngClass]="activeSection === 'products' ? 'text-accent' : 'text-secondary hover:text-accent transition'">
          Продукты</a>
-      <a [routerLink]="['/contact']" fragment="contact"
+      <a href="#contact"
          [ngClass]="activeSection === 'contact' ? 'text-accent' : 'text-secondary hover:text-accent transition'">
          Контакты</a>
     </nav>
@@ -36,9 +36,9 @@
   >
     <a [routerLink]="['/']" (click)="toggleMenu()"
        [ngClass]="activeSection === 'home' ? 'text-accent' : 'hover:text-accent transition'">Главная</a>
-    <a [routerLink]="['/products']" (click)="toggleMenu()"
+    <a href="#products" (click)="toggleMenu()"
        [ngClass]="activeSection === 'products' ? 'text-accent' : 'hover:text-accent transition'">Продукты</a>
-    <a [routerLink]="['/contact']" fragment="contact" (click)="toggleMenu()"
+    <a href="#contact" (click)="toggleMenu()"
        [ngClass]="activeSection === 'contact' ? 'text-accent' : 'hover:text-accent transition'">Контакты</a>
   </div>
 </header>
