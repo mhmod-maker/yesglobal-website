@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -35,7 +34,7 @@ export class ContactComponent {
       'service_u7ckplf',
       'template_uzlj6ve',
       this.formData,
-      environment.emailJsPublicKey
+      'xYeiKOCfD51jS0YOT'
     ).then((result: EmailJSResponseStatus) => {
       this.statusMessage = 'Сообщение успешно отправлено!';
       this.statusType = 'success';
